@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'variables.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:activity4/welcome.dart';
 
 void main()=> runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -40,22 +42,3 @@ class _LoadingState extends State<Loading> {
       });
     }
   }
-  @override
-  void initState() {
-    getData(); // will run at the start of the application
-    super.initState();
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.network('https://mir-s3-cdn-cf.behance.net/project_modules/disp/afb8cb36197347.5713616457ee5.gif'),
-          Text('Random API User Generator', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-          LinearProgressIndicator(color: Colors.blue,)
-        ],
-      ),
-    );
-  }
-}
